@@ -4,24 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Accesorios</title>
     <link rel="stylesheet" href="css/bootstrap.css">
-    <style>
-        .contenido{
-            text-align: center;
-            border: 2px solid rgb(107, 107, 224);
-            border-radius: 20px;
-            padding: 3px;
-        }
-        b{
-            transition-duration:0.5s ;
-        }
-        b:hover {
-			 font-size: 30px;
-			 background-color: lavender;
-			 padding: 3px;
-        }
-    </style>
 </head>
 <body>
     <div class="container">
@@ -45,7 +29,7 @@
                     Opciones
                   </a>
                   <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="paginaclasico.html">Instrumentos clasicos</a></li>
+                    <li><a class="dropdown-item" href="paginaclasico.html">Instrumentos acusticos</a></li>
                     <li><a class="dropdown-item" href="paginaelectrico.html">Instrumentos electricos</a></li>
                     <li><hr class="dropdown-divider"></li>
                     <li><a class="dropdown-item" href="paginacuerdas.html">Accesorios</a></li>
@@ -54,8 +38,8 @@
             
               </ul>
               <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Buscar">
+                <button class="btn btn-outline-success" type="submit">Buscar</button>
               </form>
             </div>
           </div>
@@ -101,33 +85,60 @@
                   </button>
                 </div>
         </div>
-        <br>
-        <h2>Acerca de <b>PALUMUSIC</b></h2>
-        <div class="contenido">Comenzamos con la venta de instrumentos cuando nos pidieron crear una página web y decidimos hacerla sobre eso. El maestro nos aprobó y nos alentó a seguir con esta página y estas ventas por lo que seguimos aquí.</div>
 
-        <br>
-        
-        <table style="border-collapse: collapse;">
-          <tr>
-              <td style="border: 3px solid rgb(176, 155, 209);"><i style="margin-left: 6px;">Datos de contacto</i></td>
-              
-          </tr>
-          <tr>
-              <td style="border: 3px solid rgb(176, 155, 209); padding: 10px;">
-                  Luz Melissa Chavez Murillo - luz.chavez21@cetis107.edu.mx
-              </td>
-              <td style="border: 3px solid rgb(176, 155, 209); padding: 10px;">
-                  Kenia Patricia Guerrero Parra - kenia.guerrero21@cetis107.edu.mx
-              </td>
-          </tr>
-      </table>
+        <div class="row mt-2">
+            <h3 style="color: gray;">Galeria de productos</h3><hr>
+            <div class="col-sm-3">
+              <div class="card">
+                <img src="imagenes/cuerdaselec.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Cuerdas para guitarra eléctrica</h5>
+                  <p class="card-text">Incluye 4 juegos envueltos transparentes
+                    Tono brillante y equilibrado</p>
+                  <h4 class="mt-1 text-center" style="color: red;">$554.09</h4>
+                  <a href="Comprar.html" class="btn btn-primary">Comprar</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card">
+                  <img src="imagenes/baquetas.jpg" class="card-img-top" alt="..." width="50%">
+                  <div class="card-body">
+                    <h5 class="card-title">Baquetas para Batería Eléctrica</h5>
+                    <p class="card-text">Material premium. Aptas para todos. Suaves y cómodas. Respetuosas con el medio ambiente. Garantía de satisfacción del 100%!!</p>
+                    <h4 class="mt-1 text-center" style="color: red;">$239.99</h4>
+                    <a href="Comprar.html" class="btn btn-primary">Comprar</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <div class="card">
+                  <img src="imagenes/cuerdasuke.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Respetuosas con el medio ambiente</h5>
+                    <p class="card-text">Optimizado para ukeleles sopranos afinados a afinación GCEA. Material monofilamento de titanio para brillo y proyección</p>
+                    <h4 class="mt-1 text-center" style="color: red;">$162.85</h4>
+                    <a href="Comprar.html" class="btn btn-primary">Comprar</a>
+                  </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="card">
+                <img src="imagenes/funda.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Funda de Guitarras</h5>
+                  <p class="card-text">Funda de Guitarras Universal Acolchada de 8mm con 2 Bolsillos para Guitarras Acústica y Clásica con Tamaño Más Grandes para Guitarras de 39/40/41 Pulgadas</p>
+                  <h4 class="mt-1 text-center;" style="color: red;">$748.99</h4>
+                  <a href="Comprar.html" class="btn btn-primary">Comprar</a>
+                </div>
+              </div>
 
-        <footer>
-          <marquee>
-            Melissa &copy; Kenia
-          </marquee>
-      </footer>
-
+              <footer>
+                <marquee>
+                  Melissa &copy; Kenia
+                </marquee>
+            </footer>
+            
     <script src="jquery-3.6.3.js"> </script>
     <script src="js/bootstrap.bundle.js"></script>
 </body>
