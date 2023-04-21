@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-04-2023 a las 04:11:11
+-- Tiempo de generación: 21-04-2023 a las 04:15:27
 -- Versión del servidor: 10.1.39-MariaDB
 -- Versión de PHP: 7.3.5
 
@@ -34,6 +34,16 @@ CREATE TABLE `albumes` (
   `nombre` varchar(150) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `albumes`
+--
+
+INSERT INTO `albumes` (`id`, `artista_id`, `nombre`) VALUES
+(1, 1, 'Vessel'),
+(2, 2, 'Aries'),
+(3, 3, 'Un verano sin ti'),
+(4, 4, 'Home run');
+
 -- --------------------------------------------------------
 
 --
@@ -46,6 +56,16 @@ CREATE TABLE `album_canciones` (
   `cancion_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `album_canciones`
+--
+
+INSERT INTO `album_canciones` (`id`, `album_id`, `cancion_id`) VALUES
+(1, 1, 1),
+(2, 2, 2),
+(3, 3, 3),
+(4, 4, 4);
+
 -- --------------------------------------------------------
 
 --
@@ -57,6 +77,16 @@ CREATE TABLE `artistas` (
   `nombre` varchar(100) NOT NULL,
   `imagen` varchar(150) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `artistas`
+--
+
+INSERT INTO `artistas` (`id`, `nombre`, `imagen`) VALUES
+(1, 'Twenty one pilots', 'https://media.timeout.com/images/103327219/image.jpg'),
+(2, 'Luis miguel', 'https://imagenes.elpais.com/resizer/0qkgT2RrF3RsR2ao0b2POrUxb5w=/1960x1470/cloudfront-eu-central-1.images.arcpublishing.com/prisa/NVBQKQRHGFDJRCC4Y7K2'),
+(3, 'Bad bunny', 'https://yt3.googleusercontent.com/7tCfeCWH4arhsTM-4Rz4IxWieQbegzibeXlG-kbytAujdk5dr2K0gBb8NG0Cvk6lB1dPkjyd=s900-c-k-c0x00ffffff-no-rj'),
+(4, 'Paulo londra', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUQjVausRrPshGW9OqCdY7YPVT1EEo1RhglvU74nMHGw&s');
 
 -- --------------------------------------------------------
 
@@ -74,6 +104,16 @@ CREATE TABLE `canciones` (
   `disponible` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `canciones`
+--
+
+INSERT INTO `canciones` (`id`, `nombre`, `artista_id`, `duracion`, `genero_id`, `fecha`, `disponible`) VALUES
+(1, 'Stressed Out', 1, '00:03:49', 11, '2015-04-18', 0),
+(2, 'Delirio', 2, '00:04:32', 12, '2008-05-18', 0),
+(3, 'Coco chanel', 3, '00:03:33', 10, '2023-03-16', 0),
+(4, 'Homerun', 4, '00:02:45', 11, '2019-06-02', 0);
+
 -- --------------------------------------------------------
 
 --
@@ -86,6 +126,16 @@ CREATE TABLE `favoritas` (
   `cancion_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `favoritas`
+--
+
+INSERT INTO `favoritas` (`id`, `usuario_id`, `cancion_id`) VALUES
+(1, 1, 3),
+(2, 2, 2),
+(3, 4, 1),
+(4, 3, 4);
+
 -- --------------------------------------------------------
 
 --
@@ -96,6 +146,16 @@ CREATE TABLE `generos` (
   `id` int(11) NOT NULL,
   `nombre` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `generos`
+--
+
+INSERT INTO `generos` (`id`, `nombre`) VALUES
+(9, 'kpop'),
+(10, 'reagueton'),
+(11, 'pop'),
+(12, 'jazz');
 
 -- --------------------------------------------------------
 
@@ -108,6 +168,16 @@ CREATE TABLE `membresias` (
   `nombre` varchar(100) NOT NULL,
   `precio` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `membresias`
+--
+
+INSERT INTO `membresias` (`id`, `nombre`, `precio`) VALUES
+(1, 'Premium individual', 115),
+(2, 'Premium duo', 149),
+(3, 'Premium familiar', 179),
+(4, 'Premium para estudiantes', 57);
 
 -- --------------------------------------------------------
 
@@ -122,6 +192,16 @@ CREATE TABLE `playlist` (
   `usuario_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `playlist`
+--
+
+INSERT INTO `playlist` (`id`, `nombre`, `imagen`, `usuario_id`) VALUES
+(1, 'Mayitalovers', 'https://depor.com/resizer/F0byKj1WvedD40nntVY86_EaeiA=/580x330/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/el', 1),
+(2, 'BuchiMichelle', 'https://www.contramuro.com/wp-content/uploads/2019/06/buchones-sinaloa.jpg', 2),
+(3, 'Tristes', 'https://www.exitoysuperacionpersonal.com/wp-content/uploads/2019/04/Tristeza.jpg', 3),
+(4, 'JosephPlaylist', 'https://yt3.googleusercontent.com/tZbZ3G9YnbiRZnOJytzBlb_IqwhiTrdiXzot_iBSNr6ugRrUytoEDjk2fNVYot4MOE6MK6wHJx4=s900-c-k-c0x00ffffff-no-rj', 4);
+
 -- --------------------------------------------------------
 
 --
@@ -133,6 +213,16 @@ CREATE TABLE `playlist_canciones` (
   `playlist_id` int(11) NOT NULL,
   `cancion_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `playlist_canciones`
+--
+
+INSERT INTO `playlist_canciones` (`id`, `playlist_id`, `cancion_id`) VALUES
+(1, 1, 2),
+(2, 2, 3),
+(3, 3, 1),
+(4, 4, 4);
 
 -- --------------------------------------------------------
 
@@ -149,6 +239,16 @@ CREATE TABLE `usuarios` (
   `telefono` varchar(10) NOT NULL,
   `membresia_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`id`, `nombre`, `correo`, `contraseña`, `usuario`, `telefono`, `membresia_id`) VALUES
+(1, 'Nicolas felix aguilasocho', 'nicolasfelixag@gmail.com', '22373282', 'nicofa', '3324342423', 1),
+(2, 'Michelle gamez', 'michellegamez123@gmail.com', '23e2323', 'michellegamez', '232432323', 4),
+(3, 'Sofia Felix', 'sofifelixa@gmail.com', 'chocolateconfresa', 'sofiafelix21', '998172489', 2),
+(4, 'Joseph Eloir', 'mezacastañeda@gmail.com', '32454nN2', 'josefina', '763728992', 3);
 
 --
 -- Índices para tablas volcadas
@@ -235,61 +335,61 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `albumes`
 --
 ALTER TABLE `albumes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `album_canciones`
 --
 ALTER TABLE `album_canciones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `artistas`
 --
 ALTER TABLE `artistas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `canciones`
 --
 ALTER TABLE `canciones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `favoritas`
 --
 ALTER TABLE `favoritas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `generos`
 --
 ALTER TABLE `generos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `membresias`
 --
 ALTER TABLE `membresias`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `playlist`
 --
 ALTER TABLE `playlist`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `playlist_canciones`
 --
 ALTER TABLE `playlist_canciones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Restricciones para tablas volcadas
