@@ -16,7 +16,7 @@ $pregunta10 = $_POST["pregunta10"];
 
 if($pregunta1=="b"){
             $calificacion++;
-            echo "<img src='correcta.png' width='3%'><br><br><br>";
+            echo "<img src='!!' width='3%'><br><br><br>";
         }else{
             echo "<img src='incorrecta.png' width='3%'><br><br><br>";       
         }
